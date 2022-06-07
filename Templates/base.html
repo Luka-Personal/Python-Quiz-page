@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="apple-touch-icon" href="/static/internet-meme-png-transparent-images-36635 (1).png" />
+    <link rel="icon" href="/static/internet-meme-png-transparent-images-36635 (1).png" " /> {% with messages =
+    get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %} {% if category == 'error' %}
+    <div id="error" class="error-heads">
+      {{ message }}
+      <button type="button" class="top-btn" onclick="remove('error')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% else %}
+    <div id="success" class="success-heads">
+      {{ message }}
+      <button type="button" onclick="remove('success')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+
+    <title>{% block title %}Home{% endblock %}</title>
+  </head>
+  <body>
+    <section class="header">
+      <nav class="nav-links">
+        <ul>
+          <li><a href="/">Home</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="/meme">Meme</a></li>
+          <li><a href="/quote">Quote</a></li>
+          <li><a href="/logout">Logout</a></li>
+          {% else %}
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Register</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </section>
+    <div>{% block content %} {% endblock %}</div>
+    <script>
+      function remove(id) {
+        const element = document.getElementById(id);
+        element.remove();
+      }
+    </script>
+  </body>
+</html>
