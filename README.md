@@ -1,5 +1,5 @@
 # Python-Quiz-page
-Just a medium size project, We made for University Homework.
+Just a medium size project we made for University Homework.
 
 
 
