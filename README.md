@@ -3,7 +3,7 @@ Just a medium size project we made for University Homework.
 
 
 
-Date Finished 6/6/2022 - Слава Украине!
+Date Finished 6/6/2022 - Слава Україні!
 
 Created by - Luka Tsinaridze and Tako Mazanishvili, Languages used - Python, HTML, CSS, MySQL
 
